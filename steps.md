@@ -22,3 +22,5 @@ Il y a des nestes routes pour `/host`
 -   /host/income
 -   /host/vans
 -   /host/reviews
+
+## Adding footer
