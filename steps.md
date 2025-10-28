@@ -15,4 +15,10 @@ As it is as shared UI will use a layout component.
 
 ## Nested Routes
 
-1.
+Plusieurs pages partageront la même UI => Layout
+/host affiche `<Dashboard />`
+Il y a des nestes routes pour `/host`
+
+-   /host/income
+-   /host/vans
+-   /host/reviews
