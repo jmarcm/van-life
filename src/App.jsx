@@ -6,6 +6,8 @@ import About from "./pages/About"
 import Vans from "./pages/Vans/Vans"
 import "./App.css"
 
+import "./server"
+
 export default function App() {
   return (
     <BrowserRouter>
