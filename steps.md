@@ -28,3 +28,7 @@ Il y a des nestes routes pour `/host`
 ## Main Navbar Active Link Styling
 
 Make the main navbar indicate the currently-active route.
+
+## Host Navbar Active Link Styling
+
+Make the main navbar indicate the currently-active route.
