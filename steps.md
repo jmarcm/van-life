@@ -32,3 +32,7 @@ Make the main navbar indicate the currently-active route.
 ## Host Navbar Active Link Styling
 
 Make the main navbar indicate the currently-active route.
+
+## Adding Host Vans Routes
+
+1. Add the /host/vans and /host/vans/:id routes, as well as the "Vans" link in the Host navbar
