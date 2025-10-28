@@ -24,3 +24,7 @@ Il y a des nestes routes pour `/host`
 -   /host/reviews
 
 ## Adding footer
+
+## Main Navbar Active Link Styling
+
+Make the main navbar indicate the currently-active route.
