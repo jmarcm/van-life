@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useParams, NavLink } from "react-router-dom";
 
 export default function HostVanDetail() {
     const { id } = useParams();
@@ -13,24 +13,65 @@ export default function HostVanDetail() {
             .then((data) => setCurrentVan(data.vans[0]));
     }, []);
 
-    console.log(currentVan);
+    const activeStyles = {
+        color: "#161616",
+        fontWeight: "bold",
+        textDecoration: "underline",
+    };
 
     if (!currentVan) {
         return <h1>Loading...</h1>;
     }
 
     return (
-        <div className="host-van-detail-layout-container">
-            <div className="host-van-detail">
-                <img src={currentVan.imageUrl} />
-                <div className="host-van-detail-info-text">
-                    <i className={`van-type van-type-${currentVan.type}`}>
-                        {currentVan.type}
-                    </i>
-                    <h3>{currentVan.name}</h3>
-                    <h4>${currentVan.price}/day</h4>
+        <section>
+            {/* Si on ne précise pas le relative,
+            le lien remontera à la route parente "/host" */}
+            <Link to=".." relative="path" className="back-button">
+                &larr; <span>Back to all vans</span>
+            </Link>
+            <div className="host-van-detail-layout-container">
+                <div className="host-van-detail">
+                    <img src={currentVan.imageUrl} />
+                    <div className="host-van-detail-info-text">
+                        <i className={`van-type van-type-${currentVan.type}`}>
+                            {currentVan.type}
+                        </i>
+                        <h3>{currentVan.name}</h3>
+                        <h4>${currentVan.price}/day</h4>
+                    </div>
                 </div>
+
+                <nav className="host-van-detail-nav">
+                    <NavLink
+                        to="."
+                        end
+                        style={({ isActive }) =>
+                            isActive ? activeStyles : null
+                        }
+                    >
+                        Details
+                    </NavLink>
+                    <NavLink
+                        to="pricing"
+                        style={({ isActive }) =>
+                            isActive ? activeStyles : null
+                        }
+                    >
+                        Pricing
+                    </NavLink>
+                    <NavLink
+                        to="photos"
+                        style={({ isActive }) =>
+                            isActive ? activeStyles : null
+                        }
+                    >
+                        Photos
+                    </NavLink>
+                </nav>
+
+                <Outlet />
             </div>
-        </div>
+        </section>
     );
 }

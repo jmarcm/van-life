@@ -49,3 +49,7 @@ From all /host/vans/:id [HostVanDetail] to /host/vans [HostVans].
 
 We will use the ".." short cut to go up one level in the nested routes.
 Be sure to specify relative="path", otherwise you will go back to ‘/host’.
+
+## Add the final navbar
+
+In the HostVanDetail
