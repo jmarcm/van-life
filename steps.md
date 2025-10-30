@@ -75,3 +75,7 @@ Placing the query in "to" - using relative path
 ## Conditionnaly rendering clear filter button
 
 If there's a `type` filter currently applied in the search params
+
+## Conditionally render the className "selected"
+
+If the ypeFilter value equals the value that button sets it to.
