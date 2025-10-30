@@ -71,3 +71,7 @@ Placing the query in "to" - using relative path
 ## Merging search params with Links
 
 ## Merging search params with the setSearchParams function
+
+## Conditionnaly rendering clear filter button
+
+If there's a `type` filter currently applied in the search params
