@@ -65,3 +65,5 @@ Using [useSearchParams](https://reactrouter.com/6.30.1/hooks/use-search-params#u
 ## Using Links to add search params hardcoded
 
 Placing the query in "to" - using relative path
+
+## Using setter function to add search params (setSearchParams)

@@ -205,6 +205,7 @@ footer {
 .van-list-filter-buttons {
     display: flex;
     flex-wrap: wrap;
+    gap: 1em;
 }
 
 .van-list-filter-buttons > a {

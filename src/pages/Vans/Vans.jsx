@@ -39,18 +39,38 @@ export default function HostVans() {
         <div className="host-vans-list">
             <h1>Explore our van options</h1>
             <div className="van-list-filter-buttons">
-                <Link className="van-type simple" to="?type=simple">
+                <button
+                    onClick={() => {
+                        setSearchParams({ type: "simple" });
+                    }}
+                    className="van-type simple"
+                >
                     Simple
-                </Link>
-                <Link className="van-type luxury" to="?type=luxury">
+                </button>
+                <button
+                    onClick={() => {
+                        setSearchParams({ type: "luxury" });
+                    }}
+                    className="van-type luxury"
+                >
                     Luxury
-                </Link>
-                <Link className="van-type rugged" to="?type=rugged">
+                </button>
+                <button
+                    onClick={() => {
+                        setSearchParams({ type: "rugged" });
+                    }}
+                    className="van-type rugged"
+                >
                     Rugged
-                </Link>
-                <Link className="van-type clear-filters" to=".">
+                </button>
+                <button
+                    onClick={() => {
+                        setSearchParams({});
+                    }}
+                    className="van-type clear-filters"
+                >
                     Clear
-                </Link>
+                </button>
             </div>
             <div className="van-list">{vanElements}</div>
         </div>
