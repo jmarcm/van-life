@@ -79,3 +79,7 @@ If there's a `type` filter currently applied in the search params
 ## Conditionally render the className "selected"
 
 If the ypeFilter value equals the value that button sets it to.
+
+## Fix remaingin absolute paths
+
+In `Vans.jsx` and `HostVans.jsx`

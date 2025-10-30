@@ -21,7 +21,9 @@ export default function HostVans() {
 
     const vanElements = displayedCharacters.map((van) => (
         <div key={van.id} className="van-tile">
-            <Link to={`/vans/${van.id}`}>
+            {/* On peut utiliser un lien relatif. Nous sommes dans la route "/vans"
+            on peut donc la supprimer. van.id étant de type string on peut l'utiliser seul */}
+            <Link to={van.id}>
                 <img src={van.imageUrl} />
                 <div className="van-info">
                     <h3>{van.name}</h3>
