@@ -69,3 +69,5 @@ Placing the query in "to" - using relative path
 ## Using setter function to add search params (setSearchParams)
 
 ## Merging search params with Links
+
+## Merging search params with the setSearchParams function

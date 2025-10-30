@@ -42,40 +42,50 @@ export default function HostVans() {
         } else {
             sp.set(key, value);
         }
-
+        console.log(sp);
         return `?${sp.toString()}`;
+    }
+
+    function handleFilterChange(key, value) {
+        setSearchParams((prevParams) => {
+            if (value === null) {
+                prevParams.delete(key);
+            } else {
+                prevParams.set(key, value);
+            }
+
+            return prevParams;
+        });
     }
 
     return (
         <div className="host-vans-list">
             <h1>Explore our van options</h1>
             <div className="van-list-filter-buttons">
-                <div className="van-list-filter-buttons">
-                    <Link
-                        className="van-type simple"
-                        to={genNewSearchParamString("type", "simple")}
-                    >
-                        Simple
-                    </Link>
-                    <Link
-                        className="van-type luxury"
-                        to={genNewSearchParamString("type", "luxury")}
-                    >
-                        Luxury
-                    </Link>
-                    <Link
-                        className="van-type rugged"
-                        to={genNewSearchParamString("type", "rugged")}
-                    >
-                        Rugged
-                    </Link>
-                    <Link
-                        className="van-type clear-filters"
-                        to={genNewSearchParamString("type", null)}
-                    >
-                        Clear
-                    </Link>
-                </div>
+                <button
+                    onClick={() => handleFilterChange("type", "simple")}
+                    className="van-type simple"
+                >
+                    Simple
+                </button>
+                <button
+                    onClick={() => handleFilterChange("type", "luxury")}
+                    className="van-type luxury"
+                >
+                    Luxury
+                </button>
+                <button
+                    onClick={() => handleFilterChange("type", "rugged")}
+                    className="van-type rugged"
+                >
+                    Rugged
+                </button>
+                <button
+                    onClick={() => handleFilterChange("type", null)}
+                    className="van-type clear-filters"
+                >
+                    Clear
+                </button>
             </div>
             <div className="van-list">{vanElements}</div>
         </div>
