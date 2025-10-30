@@ -61,3 +61,7 @@ Using [useOutletContext](https://reactrouter.com/6.30.1/hooks/use-outlet-context
 ## Filter the vans
 
 Using [useSearchParams](https://reactrouter.com/6.30.1/hooks/use-search-params#usesearchparams)
+
+## Using Links to add search params hardcoded
+
+Placing the query in "to" - using relative path
