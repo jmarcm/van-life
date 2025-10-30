@@ -53,3 +53,7 @@ Be sure to specify relative="path", otherwise you will go back to ‘/host’.
 ## Add the final navbar
 
 In the HostVanDetail
+
+## Passing data to the nested routes
+
+Using [useOutletContext](https://reactrouter.com/6.30.1/hooks/use-outlet-context#useoutletcontext)
