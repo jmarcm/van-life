@@ -50,7 +50,7 @@ export default function Vans() {
         } else {
             sp.set(key, value);
         }
-        console.log(sp);
+
         return `?${sp.toString()}`;
     }
 

@@ -487,6 +487,7 @@ i[class*="van-type-"] {
 
 .not-found-container .link-button {
     width: 100%;
+    margin-bottom: 1.5em;
     background-color: #161616;
     color: white;
 }
