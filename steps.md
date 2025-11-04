@@ -83,3 +83,12 @@ If the ypeFilter value equals the value that button sets it to.
 ## Fix remaingin absolute paths
 
 In `Vans.jsx` and `HostVans.jsx`
+
+## Button back to all vans from van detail page using Link State
+
+the aim is to preserve a potential filter
+
+Vans > filter:"Rugged" > Click on one van:"Green Wonder" > Click on back to all vans.
+
+So we need to have on the van detail the information about what the filter used
+to be
