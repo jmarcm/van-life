@@ -97,3 +97,8 @@ We will use the native browser history state.
 
 1. Pass any parameter via Link state
 1. Retrieve parameter with useLocation()
+
+## Conditionnaly render the back button text
+
+1. Passing the type filter in the Link state
+1. Retrieving the state using useLocation()

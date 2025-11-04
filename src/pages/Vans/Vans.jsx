@@ -23,7 +23,13 @@ export default function Vans() {
         <div key={van.id} className="van-tile">
             {/* On peut utiliser un lien relatif. Nous sommes dans la route "/vans"
             on peut donc la supprimer. van.id étant de type string on peut l'utiliser seul */}
-            <Link to={van.id} state={{ search: searchParams.toString() }}>
+            <Link
+                to={van.id}
+                state={{
+                    search: searchParams.toString(),
+                    type: typeFilter,
+                }}
+            >
                 <img src={van.imageUrl} />
                 <div className="van-info">
                     <h3>{van.name}</h3>

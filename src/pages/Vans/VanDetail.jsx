@@ -8,6 +8,7 @@ export default function VanDetail() {
     const location = useLocation();
 
     const search = location.state?.search || "";
+    const type = location.state?.type || "all";
 
     React.useEffect(() => {
         fetch(`/api/vans/${params.id}`)
@@ -18,8 +19,9 @@ export default function VanDetail() {
     return (
         <div className="van-detail-container">
             <Link to={`..?${search}`} relative="path" className="back-button">
-                &larr; <span>Back to all vans</span>
+                &larr; <span>{`Back to ${type} vans`}</span>
             </Link>
+
             {van ? (
                 <div className="van-detail">
                     <img src={van.imageUrl} />
