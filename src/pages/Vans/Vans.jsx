@@ -2,7 +2,7 @@ import React from "react";
 import { getVans } from "../../api";
 import { Link, useSearchParams } from "react-router-dom";
 
-export default function HostVans() {
+export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [vans, setVans] = React.useState([]);
@@ -23,7 +23,7 @@ export default function HostVans() {
         <div key={van.id} className="van-tile">
             {/* On peut utiliser un lien relatif. Nous sommes dans la route "/vans"
             on peut donc la supprimer. van.id étant de type string on peut l'utiliser seul */}
-            <Link to={van.id}>
+            <Link to={van.id} state={{ search: searchParams.toString() }}>
                 <img src={van.imageUrl} />
                 <div className="van-info">
                     <h3>{van.name}</h3>

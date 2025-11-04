@@ -84,7 +84,7 @@ If the ypeFilter value equals the value that button sets it to.
 
 In `Vans.jsx` and `HostVans.jsx`
 
-## Button back to all vans from van detail page using Link State
+## Button back to all vans from van detail page using Link state
 
 the aim is to preserve a potential filter
 
@@ -92,3 +92,8 @@ Vans > filter:"Rugged" > Click on one van:"Green Wonder" > Click on back to all 
 
 So we need to have on the van detail the information about what the filter used
 to be
+
+We will use the native browser history state.
+
+1. Pass any parameter via Link state
+1. Retrieve parameter with useLocation()
