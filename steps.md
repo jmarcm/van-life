@@ -106,3 +106,10 @@ We will use the native browser history state.
 ## 404 Page
 
 With a catch all page rendering a NotFound page
+
+## Code Sad Path fetching vans
+
+1. Move the fetching code
+1. Add a loading state
+1. In the fetch function add a throw error
+1. In the useEffect add a try-catch-finally block
