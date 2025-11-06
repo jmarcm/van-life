@@ -5,7 +5,9 @@ export default function AuthRequired() {
     const authenticated = false; // @todo: replace with real auth check
 
     if (!authenticated) {
-        return <Navigate to="/login" />;
+        return (
+            <Navigate to="/login" state={{ message: "You must login first" }} />
+        );
     }
 
     <Outlet />;

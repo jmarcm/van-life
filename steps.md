@@ -117,3 +117,7 @@ With a catch all page rendering a NotFound page
 ## Initial Login Form
 
 ## Protected Routes
+
+## Displays a message in case of redirection
+
+Taking advantage of Navigation State
