@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
 import VanDetail from "./pages/Vans/VanDetail";
 import HostLayout from "./components/HostLayout";
+import AuthRequired from "./components/AuthRequired";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
@@ -19,6 +20,7 @@ import NotFound from "./pages/NotFound";
 import "./App.css";
 
 import "./server";
+import Login from "./pages/Login";
 
 export default function App() {
     return (
@@ -29,22 +31,28 @@ export default function App() {
                     <Route path="about" element={<About />} />
                     <Route path="vans" element={<Vans />} />
                     <Route path="vans/:id" element={<VanDetail />} />
+                    <Route path="login" element={<Login />} />
 
-                    <Route path="host" element={<HostLayout />}>
-                        // la page par défaut du host est le dashboard
-                        <Route index element={<Dashboard />} />
-                        <Route path="income" element={<Income />} />
-                        <Route path="reviews" element={<Reviews />} />
-                        <Route path="vans" element={<HostVans />} />
-                        {/* Le contenu de cette route sera affiché dans les
+                    <Route element={<AuthRequired />}>
+                        <Route path="host" element={<HostLayout />}>
+                            // la page par défaut du host est le dashboard
+                            <Route index element={<Dashboard />} />
+                            <Route path="income" element={<Income />} />
+                            <Route path="reviews" element={<Reviews />} />
+                            <Route path="vans" element={<HostVans />} />
+                            {/* Le contenu de cette route sera affiché dans les
                         nested routes plus bas */}
-                        <Route path="vans/:id" element={<HostVanDetail />}>
-                            <Route index element={<HostVanInfo />} />
-                            <Route
-                                path="pricing"
-                                element={<HostVanPricing />}
-                            />
-                            <Route path="photos" element={<HostVanPhotos />} />
+                            <Route path="vans/:id" element={<HostVanDetail />}>
+                                <Route index element={<HostVanInfo />} />
+                                <Route
+                                    path="pricing"
+                                    element={<HostVanPricing />}
+                                />
+                                <Route
+                                    path="photos"
+                                    element={<HostVanPhotos />}
+                                />
+                            </Route>
                         </Route>
                     </Route>
 

@@ -115,3 +115,5 @@ With a catch all page rendering a NotFound page
 1. In the useEffect add a try-catch-finally block
 
 ## Initial Login Form
+
+## Protected Routes
