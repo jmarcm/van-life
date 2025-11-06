@@ -1,9 +1,9 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { loginUser } from "../api";
 
 export default function Login() {
     const location = useLocation();
-    console.log(location);
 
     const [loginFormData, setLoginFormData] = React.useState({
         email: "",
@@ -18,6 +18,9 @@ export default function Login() {
      */
     function handleSubmit(e) {
         e.preventDefault();
+        loginUser(loginFormData).then((data) => {
+            console.log(data);
+        });
         console.log(loginFormData);
     }
 
@@ -36,7 +39,7 @@ export default function Login() {
     return (
         <div className="login-container">
             {location.state?.message && (
-                <h3 className="login-message">{location.state.message}</h3>
+                <h3 className="login-first">{location.state.message}</h3>
             )}
             <h1>Sign in to your account</h1>
             <form onSubmit={handleSubmit} className="login-form">

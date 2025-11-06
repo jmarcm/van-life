@@ -499,6 +499,10 @@ i[class*="van-type-"] {
     padding-inline: 27px;
 }
 
+.login-first {
+    color: red;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;

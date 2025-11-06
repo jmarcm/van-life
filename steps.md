@@ -121,3 +121,7 @@ With a catch all page rendering a NotFound page
 ## Displays a message in case of redirection
 
 Taking advantage of Navigation State
+
+## Authentication (happy path)
+
+When submitting the form, call the asynchronous function loginUser()
