@@ -1,6 +1,5 @@
-# Van Life
+# Steps
 
-> Steps
 
 ## Add links to van detail page
 
