@@ -28,6 +28,7 @@ export default function Login() {
         loginUser(loginFormData)
             .then((data) => {
                 setError(null);
+                localStorage.setItem("loggedin", true);
                 console.log(data);
                 navigate("/host");
             })
