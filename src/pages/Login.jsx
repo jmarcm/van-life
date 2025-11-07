@@ -10,6 +10,8 @@ export default function Login() {
         password: "",
     });
 
+    const [status, setStatus] = React.useState("idle");
+
     // @todo: use form action
 
     /**
@@ -18,9 +20,14 @@ export default function Login() {
      */
     function handleSubmit(e) {
         e.preventDefault();
-        loginUser(loginFormData).then((data) => {
-            console.log(data);
-        });
+        setStatus("submitting");
+        loginUser(loginFormData)
+            .then((data) => {
+                setStatus("idle");
+                console.log(data);
+            })
+            .finally(() => setStatus("idle"));
+
         console.log(loginFormData);
     }
 
@@ -57,7 +64,9 @@ export default function Login() {
                     placeholder="Password"
                     value={loginFormData.password}
                 />
-                <button>Log in</button>
+                <button disabled={status === "submitting"}>
+                    {status === "submitting" ? "Logging in..." : "Log in"}
+                </button>
             </form>
         </div>
     );

@@ -125,3 +125,9 @@ Taking advantage of Navigation State
 ## Authentication (happy path)
 
 When submitting the form, call the asynchronous function loginUser()
+
+## Authentication (sad path)
+
+1. Add a `status` state and default it to "idle".
+   When the login form begins submitting, set it to "submitting".
+   When it's done submitting and the data has come back, set it to "idle" again.
