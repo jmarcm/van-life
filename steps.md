@@ -137,4 +137,8 @@ When submitting the form, call the asynchronous function loginUser()
    If there's an error from `loginUser` (add a .catch(err => {...}) in
    the promise chain), set the error to the error that comes back.
 
-1. Display the error.message below the `h1` if there's ever an error in state
+1. Display the error.message below the `h1` if there's ever an error in state.
+
+## Navigate to /host route after login
+
+Using useNavigate()

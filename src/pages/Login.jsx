@@ -1,10 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
 
 export default function Login() {
-    const location = useLocation();
-
     const [loginFormData, setLoginFormData] = React.useState({
         email: "",
         password: "",
@@ -13,6 +11,10 @@ export default function Login() {
     const [status, setStatus] = React.useState("idle");
 
     const [error, setError] = React.useState(null);
+
+    const location = useLocation();
+
+    const navigate = useNavigate();
 
     // @todo: use form action
 
@@ -23,11 +25,11 @@ export default function Login() {
     function handleSubmit(e) {
         e.preventDefault();
         setStatus("submitting");
-        setError(null);
         loginUser(loginFormData)
             .then((data) => {
-                setStatus("idle");
+                setError(null);
                 console.log(data);
+                navigate("/host");
             })
             .catch((err) => {
                 setError(err);
