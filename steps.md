@@ -142,3 +142,7 @@ When submitting the form, call the asynchronous function loginUser()
 ## Navigate to /host route after login
 
 Using useNavigate()
+
+## History Stack and Replace
+
+In `AuthRequired`and `Login` pages.

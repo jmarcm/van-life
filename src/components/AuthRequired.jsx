@@ -6,7 +6,11 @@ export default function AuthRequired() {
 
     if (!isLoggedIn) {
         return (
-            <Navigate to="/login" state={{ message: "You must login first" }} />
+            <Navigate
+                to="/login"
+                state={{ message: "You must login first" }}
+                replace
+            />
         );
     }
 

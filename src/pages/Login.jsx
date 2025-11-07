@@ -30,7 +30,7 @@ export default function Login() {
                 setError(null);
                 localStorage.setItem("loggedin", true);
                 console.log(data);
-                navigate("/host");
+                navigate("/host", { replace: true });
             })
             .catch((err) => {
                 setError(err);
