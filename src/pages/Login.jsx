@@ -12,6 +12,8 @@ export default function Login() {
 
     const [status, setStatus] = React.useState("idle");
 
+    const [error, setError] = React.useState(null);
+
     // @todo: use form action
 
     /**
@@ -21,10 +23,15 @@ export default function Login() {
     function handleSubmit(e) {
         e.preventDefault();
         setStatus("submitting");
+        setError(null);
         loginUser(loginFormData)
             .then((data) => {
                 setStatus("idle");
                 console.log(data);
+            })
+            .catch((err) => {
+                setError(err);
+                console.error(err);
             })
             .finally(() => setStatus("idle"));
 

@@ -131,3 +131,8 @@ When submitting the form, call the asynchronous function loginUser()
 1. Add a `status` state and default it to "idle".
    When the login form begins submitting, set it to "submitting".
    When it's done submitting and the data has come back, set it to "idle" again.
+
+1. Add an `error` state and default it to `null`.
+   When the form is submitted, reset the errors to `null`.
+   If there's an error from `loginUser` (add a .catch(err => {...}) in
+   the promise chain), set the error to the error that comes back.
