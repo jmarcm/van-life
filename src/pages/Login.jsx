@@ -13,6 +13,7 @@ export default function Login() {
     const [error, setError] = React.useState(null);
 
     const location = useLocation();
+    const from = location.state?.from || "/host";
 
     const navigate = useNavigate();
 
@@ -30,7 +31,7 @@ export default function Login() {
                 setError(null);
                 localStorage.setItem("loggedin", true);
                 console.log(data);
-                navigate("/host", { replace: true });
+                navigate(from, { replace: true });
             })
             .catch((err) => {
                 setError(err);

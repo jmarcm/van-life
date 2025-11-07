@@ -1,6 +1,5 @@
 # Steps
 
-
 ## Add links to van detail page
 
 1. Wrap the contents of the "van-tile" div in a Link that sends the user to `/vans/${van-id-here}`.
@@ -145,3 +144,13 @@ Using [useNavigate()](https://reactrouter.com/6.30.1/hooks/use-navigate#usenavig
 ## History Stack and Replace
 
 ⚠️ In `AuthRequired`and `Login` pages.
+
+## Send user to original page
+
+Make it so after login, we go to the page we originally were trying to go to instead of always to the /host route.
+If the user wasn't redirected to the login page (i.e. they clicked the link to the login page instead of being redirected there from a protected route) they should still be redirected to /host by default.
+
+In `AuthRequired` we add to the state a from object whose value is location.pathname
+`{pathname: '/host/vans/1', search: '', hash: '', state: null, key: 'default'}`
+
+We use it in `Login` with useLocation()
