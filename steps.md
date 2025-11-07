@@ -145,4 +145,4 @@ Using useNavigate()
 
 ## History Stack and Replace
 
-In `AuthRequired`and `Login` pages.
+⚠️ In `AuthRequired`and `Login` pages.
