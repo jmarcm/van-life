@@ -140,7 +140,7 @@ When submitting the form, call the asynchronous function loginUser()
 
 ## Navigate to /host route after login
 
-Using useNavigate()
+Using [useNavigate()](https://reactrouter.com/6.30.1/hooks/use-navigate#usenavigate)
 
 ## History Stack and Replace
 
