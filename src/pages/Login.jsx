@@ -30,7 +30,7 @@ export default function Login() {
             .then((data) => {
                 setError(null);
                 localStorage.setItem("loggedin", true);
-                console.log(data);
+
                 navigate(from, { replace: true });
             })
             .catch((err) => {
@@ -38,8 +38,6 @@ export default function Login() {
                 console.error(err);
             })
             .finally(() => setStatus("idle"));
-
-        console.log(loginFormData);
     }
 
     /**
