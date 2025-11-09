@@ -8,11 +8,18 @@ export default function HostVans() {
     const [error, setError] = React.useState(null);
 
     React.useEffect(() => {
-        setLoading(true);
-        getHostVans()
-            .then((data) => setVans(data))
-            .catch((err) => setError(err))
-            .finally(() => setLoading(false));
+        async function loadVans() {
+            setLoading(true);
+            try {
+                const data = await getHostVans();
+                setVans(data);
+            } catch (err) {
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        }
+        loadVans();
     }, []);
 
     const vansElements = vans.map((van) => {
