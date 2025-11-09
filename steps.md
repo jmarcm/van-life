@@ -76,7 +76,7 @@ If there's a `type` filter currently applied in the search params
 
 ## Conditionally render the className "selected"
 
-If the ypeFilter value equals the value that button sets it to.
+If the typeFilter value equals the value that button sets it to.
 
 ## Fix remaingin absolute paths
 
@@ -154,3 +154,5 @@ In `AuthRequired` we add to the state a from object whose value is location.path
 `{pathname: '/host/vans/1', search: '', hash: '', state: null, key: 'default'}`
 
 We use it in `Login` with useLocation()
+
+## Remove placeholders
