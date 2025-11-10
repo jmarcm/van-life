@@ -4,7 +4,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 export default function AuthRequired() {
     const isLoggedIn = localStorage.getItem("loggedin");
     const location = useLocation();
-    console.log("AuthRequired location:", location);
+
     if (!isLoggedIn) {
         return (
             // We add to the state the current location pathname so we can use it after login
